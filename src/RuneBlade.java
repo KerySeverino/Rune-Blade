@@ -6,11 +6,19 @@ import java.awt.event.*;
 public class RuneBlade extends Applet implements Runnable, KeyListener, MouseListener, MouseMotionListener{
 	
 	
-
+	Image offScreenImg;
+	Graphics offScreenPen;
 	
-	Animation animation = new Animation("runLeft/runLeft", 10);
+	Animation animation = new Animation("runLeft/runLeft", 10, 5);
 	
 	public void init() {
+		
+		//Write code to query resolution of screen.
+		
+		offScreenImg = this.createImage(1920, 1080);
+		offScreenPen = offScreenImg.getGraphics();
+		
+		
 		Thread t = new Thread(this);
 		t.start();
 	}
@@ -25,14 +33,22 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 				Thread.sleep(16);
 			}catch(Exception x) {};
 		}
-		
-		
+
 		
 	}
 	
 	
 	public void paint(Graphics pen) {
-		pen.drawImage(animation.nextImage(), 0, 0, null);
+		pen.drawImage(animation.nextImage(), 100, 100, 240, 160, null);
+		
+	}
+	
+	public void update(Graphics pen) {
+		offScreenPen.clearRect(0, 0, 1920, 1080);
+		
+		paint(offScreenPen);
+		
+		pen.drawImage(offScreenImg, 0, 0, null);
 		
 	}
 

@@ -4,7 +4,10 @@ public class Animation {
 	private Image[] image;
 	private int next;
 	
-	public Animation(String name, int count) {
+	private int duration;
+	private int delay;
+	
+	public Animation(String name, int count, int duration) {
 		
 		image = new Image[count];
 		
@@ -13,14 +16,25 @@ public class Animation {
 			
 		}
 		
+		
+		this.duration = duration;
+		this.delay = duration;
 	}
 	
 	public Image nextImage() {
-		next++;
 		
-		if (next == image.length) {
-			next = 0;
+		if (delay == 0) {
+			
+			next++;
+			
+			if (next == image.length) {
+				next = 0;
+			}
+			
+			delay = duration;
 		}
+		
+		delay --;
 		
 		return image[next];
 	}
