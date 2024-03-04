@@ -9,12 +9,21 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	Image offScreenImg;
 	Graphics offScreenPen;
 	
-	Animation animation = new Animation("runLeft/runLeft", 10, 5);
+	boolean LT_Pressed = false;
+	boolean RT_Pressed = false;
+	
+	
+	String [] pose = {"RunLeft", "RunRight", "IdleLeft", "IdleRight"};
+	
+	Sprite player = new Sprite("player", pose, 100, 100, 10, 5);
+	
+	//Animation animation = new Animation("runLeft/runLeft", 10, 5);
 	
 	public void init() {
 		
 		//Write code to query resolution of screen.
 		
+		addKeyListener(this);
 		offScreenImg = this.createImage(1920, 1080);
 		offScreenPen = offScreenImg.getGraphics();
 		
@@ -27,8 +36,14 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		
 		while(true) { 
 			
+			player.moving = false;
+			
+			if(LT_Pressed) player.moveLT(5);
+			if(RT_Pressed) player.moveRT(5);
+			
 			repaint();
-
+			
+			
 			try {
 				Thread.sleep(16);
 			}catch(Exception x) {};
@@ -39,7 +54,9 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	
 	
 	public void paint(Graphics pen) {
-		pen.drawImage(animation.nextImage(), 100, 100, 240, 160, null);
+		//pen.drawImage(animation.nextImage(), 100, 100, 240, 160, null);
+		
+		player.draw(pen);
 		
 	}
 	
@@ -95,14 +112,21 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	}
 
 	@Override
-	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
+	public void keyPressed(KeyEvent e) {
+		
+		int code = e.getKeyCode();
+		
+		if (code == e.VK_A )   LT_Pressed = true;  
+		if (code == e.VK_D)   RT_Pressed = true; 
 		
 	}
 
 	@Override
-	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
+	public void keyReleased(KeyEvent e) {
+		int code = e.getKeyCode();
+		
+		if (code == e.VK_A )   LT_Pressed = false;  
+		if (code == e.VK_D)   RT_Pressed = false;  
 		
 	}
 

@@ -7,6 +7,9 @@ public class Animation {
 	private int duration;
 	private int delay;
 	
+	private Image[] idle;
+	
+	
 	public Animation(String name, int count, int duration) {
 		
 		image = new Image[count];
@@ -20,6 +23,8 @@ public class Animation {
 		this.duration = duration;
 		this.delay = duration;
 	}
+	
+
 	
 	public Image nextImage() {
 		
