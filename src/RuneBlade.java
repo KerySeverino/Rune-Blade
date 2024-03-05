@@ -11,16 +11,20 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	
 	boolean LT_Pressed = false;
 	boolean RT_Pressed = false;
-	
+	boolean Test_Tool = false;
 	
 	String [] pose = {"RunLeft", "RunRight", "IdleLeft", "IdleRight"};
 	
 	Sprite player = new Sprite("player", pose, 100, 100, 10, 5);
 	
 	Rect hitbox = new Rect(200,180, 50,90);
-	Rect hurtbox = new Rect(500,100,160,160);
+	Rect[] hurtboxes =
+	{ 
+		new Rect(500,100,160,160),
+		new Rect(0,100,160,160),
+	};
 	
-	Health_UI Hp = new Health_UI(hitbox,hurtbox,100);
+	Health_UI Hp = new Health_UI(hitbox,hurtboxes,100);
 	
 	//Animation animation = new Animation("runLeft/runLeft", 10, 5);
 	
@@ -54,7 +58,6 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			player.moveRT(5);
 			hitbox.moveRT(5);
 			}
-			
 			Hp.damage_taken();
 			repaint();
 			
@@ -72,12 +75,16 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		//pen.drawImage(animation.nextImage(), 100, 100, 240, 160, null);
 		
 		player.draw(pen);
+		Hp.draw(pen);
+		
+		if(Test_Tool == true) {
 		pen.setColor(Color.red);
-		hurtbox.draw(pen);
+		for(int i =0;i<hurtboxes.length;i++)
+		hurtboxes[i].draw(pen);
 		pen.setColor(Color.green);
 		hitbox.draw(pen);
 		pen.setColor(Color.black);
-		Hp.draw(pen);
+		}
 	}
 	
 	public void update(Graphics pen) {
@@ -139,6 +146,8 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		if (code == e.VK_A )   LT_Pressed = true;  
 		if (code == e.VK_D)   RT_Pressed = true; 
 		
+
+		if (code == e.VK_T )  Test_Tool = true; 
 	}
 
 	@Override
@@ -147,7 +156,8 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		
 		if (code == e.VK_A )   LT_Pressed = false;  
 		if (code == e.VK_D)   RT_Pressed = false;  
-		
+
+		if (code == e.VK_T )  Test_Tool = false; 		
 	}
 
 	@Override
