@@ -17,6 +17,11 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	
 	Sprite player = new Sprite("player", pose, 100, 100, 10, 5);
 	
+	Rect hitbox = new Rect(200,180, 50,90);
+	Rect hurtbox = new Rect(500,100,160,160);
+	
+	Health_UI Hp = new Health_UI(hitbox,hurtbox,100);
+	
 	//Animation animation = new Animation("runLeft/runLeft", 10, 5);
 	
 	public void init() {
@@ -37,10 +42,20 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		while(true) { 
 			
 			player.moving = false;
+			Hp.damage_taken();
+
+			if(LT_Pressed) 
+			{
+			player.moveLT(5);
+			hitbox.moveLT(5);
+			}
+			if(RT_Pressed) 
+			{
+			player.moveRT(5);
+			hitbox.moveRT(5);
+			}
 			
-			if(LT_Pressed) player.moveLT(5);
-			if(RT_Pressed) player.moveRT(5);
-			
+			Hp.damage_taken();
 			repaint();
 			
 			
@@ -57,7 +72,12 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		//pen.drawImage(animation.nextImage(), 100, 100, 240, 160, null);
 		
 		player.draw(pen);
-		
+		pen.setColor(Color.red);
+		hurtbox.draw(pen);
+		pen.setColor(Color.green);
+		hitbox.draw(pen);
+		pen.setColor(Color.black);
+		Hp.draw(pen);
 	}
 	
 	public void update(Graphics pen) {
