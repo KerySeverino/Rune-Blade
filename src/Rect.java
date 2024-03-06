@@ -69,6 +69,7 @@ public class Rect
 		y += dy;
 	}
 	
+	
 	public void resizeBy(int dw, int dh)
 	{
 		w += dw;

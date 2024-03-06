@@ -11,11 +11,15 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	
 	boolean LT_Pressed = false;
 	boolean RT_Pressed = false;
+	boolean DN_Pressed = false;
 	boolean Test_Tool = false;
 	
-	String [] pose = {"RunLeft", "RunRight", "IdleLeft", "IdleRight"};
+	String [] pose = {"RunLeft", "RunRight", "IdleLeft", "IdleRight", "CrouchLeft","CrouchRight", "CrouchWalkLeft" ,"CrouchWalkRight"}; // title of each animation.
 	
-	Sprite player = new Sprite("player", pose, 100, 100, 10, 5);
+	int [] count = {10, 10, 10, 10, 3, 3, 8, 8}; // number of frames in the animations above.
+	int [] duration = {5, 5, 10, 10, 5, 5, 10, 10}; // higher the duration, slower the animation.
+	
+	Sprite player = new Sprite("player", pose, 100, 100, count, duration);
 	
 	Rect hitbox = new Rect(200,180, 50,90);
 	Rect[] hurtboxes =
@@ -46,18 +50,39 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		while(true) { 
 			
 			player.moving = false;
+			player.crouching = false;
 			Hp.damage_taken();
+			
+			if(DN_Pressed) {
+				player.crouch();
+				
+				if(LT_Pressed) 
+				{
+					
+				player.moveLT(2);
+				hitbox.moveLT(2);
+				}
+				if(RT_Pressed) 
+				{
+				player.moveRT(2);
+				hitbox.moveRT(2);
+				}
+				
+			}else {
+				if(LT_Pressed) 
+				{
+					
+				player.moveLT(5);
+				hitbox.moveLT(5);
+				}
+				if(RT_Pressed) 
+				{
+				player.moveRT(5);
+				hitbox.moveRT(5);
+				}
+			}
 
-			if(LT_Pressed) 
-			{
-			player.moveLT(5);
-			hitbox.moveLT(5);
-			}
-			if(RT_Pressed) 
-			{
-			player.moveRT(5);
-			hitbox.moveRT(5);
-			}
+
 			Hp.damage_taken();
 			repaint();
 			
@@ -144,10 +169,17 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		int code = e.getKeyCode();
 		
 		if (code == e.VK_A )   LT_Pressed = true;  
-		if (code == e.VK_D)   RT_Pressed = true; 
-		
+		if (code == e.VK_D)    RT_Pressed = true; 
+		if (code == e.VK_S)    DN_Pressed = true;
 
-		if (code == e.VK_T )  Test_Tool = true; 
+		if (code == e.VK_T ) {
+			if (Test_Tool == true) {
+				Test_Tool = false; 
+			}else {
+				Test_Tool = true; 
+			}
+			
+		}
 	}
 
 	@Override
@@ -155,9 +187,10 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		int code = e.getKeyCode();
 		
 		if (code == e.VK_A )   LT_Pressed = false;  
-		if (code == e.VK_D)   RT_Pressed = false;  
+		if (code == e.VK_D)   RT_Pressed = false; 
+		if (code == e.VK_S)    DN_Pressed = false;
 
-		if (code == e.VK_T )  Test_Tool = false; 		
+		//if (code == e.VK_T )  Test_Tool = false; 		
 	}
 
 	@Override

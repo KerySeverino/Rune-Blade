@@ -12,6 +12,9 @@ public class Animation {
 	
 	public Animation(String name, int count, int duration) {
 		
+		
+		
+		
 		image = new Image[count];
 		
 		for (int i = 0; i < count; i ++) {
@@ -24,6 +27,24 @@ public class Animation {
 		this.delay = duration;
 	}
 	
+	
+	public Image crouch() {
+		if (delay == 0) {
+			
+			next++;
+			
+			if (next == 3) {
+				next = 2;
+			}
+			
+			delay = duration;
+		}
+		
+		delay --;
+		
+		return image[next];
+	}
+
 
 	
 	public Image nextImage() {
