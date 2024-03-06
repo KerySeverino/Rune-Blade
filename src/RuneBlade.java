@@ -26,6 +26,8 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	AI_control enemy = new AI_control(100, 560, 40, 50);
 	AI_control enemy_scared = new AI_control(600, 560, 40, 50);
 
+	GameOver deathScreen = new GameOver();
+	
 	Rect[] hurtboxes =
 	{ 
 		new Rect(0,500,160,160),
@@ -128,6 +130,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		enemy.draw(pen);
 		enemy_scared.draw(pen);
 		//Hp.draw(pen);
+		//deathScreen.draw(pen);
 		
 		if(Test_Tool == true) {
 		pen.setColor(Color.red);
