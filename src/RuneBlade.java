@@ -16,19 +16,23 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	
 	String [] pose = {"RunLeft", "RunRight", "IdleLeft", "IdleRight", "CrouchLeft","CrouchRight", "CrouchWalkLeft" ,"CrouchWalkRight"}; // title of each animation.
 	
+
 	int [] count = {10, 10, 10, 10, 3, 3, 8, 8}; // number of frames in the animations above.
 	int [] duration = {5, 5, 10, 10, 5, 5, 10, 10}; // higher the duration, slower the animation.
 	
-	Sprite player = new Sprite("player", pose, 100, 100, count, duration);
+	Sprite player = new Sprite("player", pose, 600, 450, count, duration);
 	
-	Rect hitbox = new Rect(200,180, 50,90);
+	Rect player_hitbox = new Rect(705,530, 50,90);
+	AI_control enemy = new AI_control(100, 560, 40, 50);
+	AI_control enemy_scared = new AI_control(600, 560, 40, 50);
+
 	Rect[] hurtboxes =
 	{ 
-		new Rect(500,100,160,160),
-		new Rect(0,100,160,160),
+		new Rect(0,500,160,160),
+		new Rect(800,500,160,160)
 	};
 	
-	Health_UI Hp = new Health_UI(hitbox,hurtboxes,100);
+	//Health_UI Hp = new Health_UI(hitbox,hurtboxes,100);
 	
 	//Animation animation = new Animation("runLeft/runLeft", 10, 5);
 	
@@ -51,7 +55,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			
 			player.moving = false;
 			player.crouching = false;
-			Hp.damage_taken();
+			//Hp.damage_taken();
 			
 			if(DN_Pressed) {
 				player.crouch();
@@ -59,31 +63,52 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 				if(LT_Pressed) 
 				{
 					
-				player.moveLT(2);
-				hitbox.moveLT(2);
+				player.moveLT(4);
+				player_hitbox.moveLT(4);
 				}
 				if(RT_Pressed) 
 				{
-				player.moveRT(2);
-				hitbox.moveRT(2);
+				player.moveRT(4);
+				player_hitbox.moveRT(4);
 				}
 				
 			}else {
 				if(LT_Pressed) 
 				{
 					
-				player.moveLT(5);
-				hitbox.moveLT(5);
+				player.moveLT(4);
+				player_hitbox.moveLT(4);
 				}
 				if(RT_Pressed) 
 				{
-				player.moveRT(5);
-				hitbox.moveRT(5);
+				player.moveRT(4);
+				player_hitbox.moveRT(4);
 				}
 			}
 
 
-			Hp.damage_taken();
+			//Hp.damage_taken();
+
+			enemy.chase(player_hitbox, 3);
+			enemy_scared.evade(player_hitbox, 2);
+			
+			
+			if(enemy_scared.x < 0 || enemy_scared.x > 1000) enemy_scared.x = 500;
+			
+			//Hp.damage_taken();
+
+			if(LT_Pressed) 
+			{
+			player.moveLT(5);
+			player_hitbox.moveLT(5);
+			}
+			if(RT_Pressed) 
+			{
+			player.moveRT(5);
+			player_hitbox.moveRT(5);
+			}
+			//Hp.damage_taken();
+
 			repaint();
 			
 			
@@ -100,14 +125,16 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		//pen.drawImage(animation.nextImage(), 100, 100, 240, 160, null);
 		
 		player.draw(pen);
-		Hp.draw(pen);
+		enemy.draw(pen);
+		enemy_scared.draw(pen);
+		//Hp.draw(pen);
 		
 		if(Test_Tool == true) {
 		pen.setColor(Color.red);
 		for(int i =0;i<hurtboxes.length;i++)
 		hurtboxes[i].draw(pen);
 		pen.setColor(Color.green);
-		hitbox.draw(pen);
+		player_hitbox.draw(pen);
 		pen.setColor(Color.black);
 		}
 	}
