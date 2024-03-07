@@ -29,7 +29,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	GameOver deathScreen = new GameOver();
 	
 	Rect[] hurtboxes =
-	{ 
+	{
 		new Rect(0,500,160,160),
 		new Rect(800,500,160,160)
 	};
