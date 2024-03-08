@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.*;
@@ -8,13 +9,13 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	
 	Image offScreenImg;
 	Graphics offScreenPen;
-	
 	boolean LT_Pressed = false;
 	boolean RT_Pressed = false;
 	boolean DN_Pressed = false;
 	boolean Test_Tool = false;
 	
 	String [] pose = {"RunLeft", "RunRight", "IdleLeft", "IdleRight", "CrouchLeft","CrouchRight", "CrouchWalkLeft" ,"CrouchWalkRight"}; // title of each animation.
+	
 	
 
 	int [] count = {10, 10, 10, 10, 3, 3, 8, 8}; // number of frames in the animations above.
@@ -27,6 +28,11 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	AI_control enemy_scared = new AI_control(600, 560, 40, 50);
 
 	GameOver deathScreen = new GameOver();
+
+	
+	TileMap map = new TileMap();
+	
+	String[] mapArr = map.getMap();
 	
 	Rect[] hurtboxes =
 	{
@@ -37,7 +43,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	//Health_UI Hp = new Health_UI(hitbox,hurtboxes,100);
 	
 	//Animation animation = new Animation("runLeft/runLeft", 10, 5);
-	
+
 	public void init() {
 		
 		//Write code to query resolution of screen.
@@ -125,6 +131,8 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	
 	public void paint(Graphics pen) {
 		//pen.drawImage(animation.nextImage(), 100, 100, 240, 160, null);
+		
+		map.draw(pen);
 		
 		player.draw(pen);
 		enemy.draw(pen);
