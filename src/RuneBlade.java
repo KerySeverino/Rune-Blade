@@ -16,8 +16,9 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	
 	String [] pose = {"RunLeft", "RunRight", "IdleLeft", "IdleRight", "CrouchLeft","CrouchRight", "CrouchWalkLeft" ,"CrouchWalkRight"}; // title of each animation.
 	
-
-	int [] count = {10, 10, 10, 10, 3, 3, 8, 8}; // number of frames in the animations above.
+	TileMap map = new TileMap();
+	
+;	int [] count = {10, 10, 10, 10, 3, 3, 8, 8}; // number of frames in the animations above.
 	int [] duration = {5, 5, 10, 10, 5, 5, 10, 10}; // higher the duration, slower the animation.
 	
 	Sprite player = new Sprite("player", pose, 600, 450, count, duration);
@@ -125,6 +126,9 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	
 	public void paint(Graphics pen) {
 		//pen.drawImage(animation.nextImage(), 100, 100, 240, 160, null);
+		
+		map.draw(pen);
+		
 		
 		player.draw(pen);
 		enemy.draw(pen);

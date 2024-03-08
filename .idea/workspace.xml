@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8ebaf719-05a8-40e7-a794-2e07143dbd8d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/TIles/tile18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/TIles/tile22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile101.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile103.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile104.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile105.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile106.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile107.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile109.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile110.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile111.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile112.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile113.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile115.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile116.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile117.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile118.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile119.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile121.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile122.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile123.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile124.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile125.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile126.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile127.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile129.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile130.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile131.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile132.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile133.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile134.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile135.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile136.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile137.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile138.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile139.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile140.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile141.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile142.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile143.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile145.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile146.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile147.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile148.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile149.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile151.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile153.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile154.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile155.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile156.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile157.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile158.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile159.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile160.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile161.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile162.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile163.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile164.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile165.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile166.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile167.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile168.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile169.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile170.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile171.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile172.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile173.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile174.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile175.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile176.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile177.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile178.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile179.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile181.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile44.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile45.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile54.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile55.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile59.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile61.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile62.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile63.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile65.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile66.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile67.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile68.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile69.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile70.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile71.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile73.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile74.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile75.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile77.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile78.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile79.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile80.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile81.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile82.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile83.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile84.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile85.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile86.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile88.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile89.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile90.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile91.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile92.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile93.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile94.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile95.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile97.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile98.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Tiles-Import/tile99.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RuneBlade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RuneBlade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TileMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TileMap.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/RuneBlade.java" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2dNMHldD0jm0Xcjhd6a6jTf34EI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Applet.Applet.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RuneBlade.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;tilemap&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/christopherrivera/Rune-Blade&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/TIles" />
+      <recent name="$PROJECT_DIR$/assets/Tile-Maps" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Applet" type="Applet">
+      <option name="MAIN_CLASS_NAME" value="RuneBlade" />
+      <module name="Rune-Blade" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-995e55e7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8ebaf719-05a8-40e7-a794-2e07143dbd8d" name="Changes" comment="" />
+      <created>1709843997087</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709843997087</updated>
+      <workItem from="1709912407555" duration="395000" />
+      <workItem from="1709912807169" duration="77000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
