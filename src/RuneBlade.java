@@ -224,9 +224,9 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	public void keyReleased(KeyEvent e) {
 		int code = e.getKeyCode();
 		
-		if (code == e.VK_A )   LT_Pressed = false;  
+		if (code == e.VK_A)   LT_Pressed = false;  
 		if (code == e.VK_D)   RT_Pressed = false; 
-		if (code == e.VK_S)    DN_Pressed = false;
+		if (code == e.VK_S)   DN_Pressed = false;
 
 		//if (code == e.VK_T )  Test_Tool = false; 		
 	}
