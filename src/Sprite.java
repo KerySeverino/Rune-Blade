@@ -5,6 +5,7 @@ public class Sprite extends Rect {
 	Animation [] animations;
 	boolean moving = false;
 	boolean crouching = false;
+	boolean attacking = false;
 	
 	int direction = 1; // 0 = left, 1 = right
 	int action = 0;
@@ -42,8 +43,16 @@ public class Sprite extends Rect {
 				}
 			}
 			
-		}
-		else if (!moving) {
+		}else if (attacking) {
+			if (direction == 0) {
+				pen.drawImage(animations[8].nextImage(), x, y, w, h, null);
+			}else {
+				pen.drawImage(animations[9].nextImage(), x, y, w, h, null);
+			}
+			
+			
+			
+		}else if (!moving) {
 			
 			if (direction == 0) {
 				pen.drawImage(animations[2].nextImage(), x, y, w, h, null);
@@ -56,6 +65,7 @@ public class Sprite extends Rect {
 		}else if (moving){
 			pen.drawImage(animations[action].nextImage(), x, y, w, h, null);
 		}
+		
 		
 		
 	}
@@ -90,4 +100,9 @@ public class Sprite extends Rect {
 		
 		crouching = true;
 	}
+	
+	public void attack() {
+		attacking = true;
+	}
+	
 }

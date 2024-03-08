@@ -7,14 +7,14 @@ public class Health_UI {
 	
 	
 	public Rect  hitbox;
-	public Rect [] hurtbox;
+	public Hurtbox [] hurtbox;
 	public int   health;
 	public int   duration;
 	public int   delay;
 	public Image image;
 	
 	
-	public Health_UI (Rect hitbox, Rect[] hurtboxes,int duration)
+	public Health_UI (Hitbox hitbox, Hurtbox[] hurtboxes,int duration)
 	{
 		health   = 0;
 		this.hitbox   = hitbox;
@@ -26,19 +26,25 @@ public class Health_UI {
 		delay = 0;
 	}
 	
-	public void damage_taken()
+	public boolean damage_taken()
 	{
+		boolean damaged = false;
 		int p = health;
-		for(int i =0; i < hurtbox.length;i++) {
+		for(int i =0; i < hurtbox.length;i++) 
+		{
 		if(hitbox.overlaps(hurtbox[i])) 
 		{
 			if(delay == health)
 			{
 			health++;
-	
-			if(health > p) { p++;
 			
-			delay = duration;}
+			if(health > p) 
+			{
+				p++;
+			
+				delay = duration;
+				damaged = true;
+			}
 			}
 			if (delay>0)delay--;
 
@@ -48,10 +54,17 @@ public class Health_UI {
 				 image = Toolkit.getDefaultToolkit().getImage("Health/Health_" + health + ".png");
 			 	}
 		}
+		
 		}
+		
+		if(damaged == true) return true;
+		
+		else return false;
+
 	}
 	public void draw (Graphics g) 
 	{
+		
 		g.drawImage(image, 0, 0,40,40, null );
 		
 	}

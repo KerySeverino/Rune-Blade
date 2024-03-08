@@ -12,6 +12,12 @@ public class Rect
 	int old_y;
 	
 	boolean held = false;
+
+	double vy;
+	double vx;
+		
+	static double G = .6;
+		
 	
 	public Rect(int x, int y, int w, int h)
 	{
@@ -153,5 +159,43 @@ public class Rect
 	{
 		return "new Rect(" + x + ", " + y + ", " + w + ", " + h + "),";
 	}
+
+	//physics
+		
+		public void goUP(int vy) {
+			
+			this.vy = -vy;
+			
+		}
+		
+		public void goDN (int vy) {
+			
+			this.vy = +vy;
+		}
+		
+		public void goLT(int vx) {
+			
+			this.vx = -vx;
+		}
+		
+		public void goRT (int vx) {
+			
+			this.vx =+ vx;
+		}
+		
+		public void jump(int h) {
+			
+			vy = -h;
+			
+		}
+	    
+		public void move() {
+			
+			x +=vx;
+			y += vy +G/2;
+			
+			vy +=G;
+		}
+	
 
 }
