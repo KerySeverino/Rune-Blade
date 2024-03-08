@@ -26,7 +26,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	Sprite player = new Sprite("player", pose, 600, 450, count, duration);
 	
 	Hitbox player_hitbox = new Hitbox(705,530, 44,80,4);
-	Hurtbox Player_hurtboxes = new Hurtbox (1000,1000,20,20);
+	Hurtbox Player_hurtboxes = new Hurtbox (1000,1000,50,20);
 	
 	AI_control enemy = new AI_control(100, 560, 40, 50);
 	AI_control enemy_scared = new AI_control(600, 560, 40, 50);
@@ -114,18 +114,16 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			if(enemy_scared.x < 0 || enemy_scared.x > 1000) enemy_scared.x = 500;
 			
 			
-
 			if(Attack_Pressed == true) {
 				
 				player.attack();
 
-				if (player.direction == 1)
-					Player_hurtboxes = new Hurtbox (player.x+130, player.y +105,50,20);
-
-				if (player.direction == 0) 
-					Player_hurtboxes = new Hurtbox (player.x + 55, player.y + 105,50,20);
+				Player_hurtboxes.Basic_attack(player);
 			}
-			if(Attack_Pressed == false) Player_hurtboxes = new Hurtbox (1000,1000,20,20);
+
+			
+			if(Attack_Pressed == false) Player_hurtboxes = new Hurtbox (1000,1000,50,20);
+
 			
 			for(int i =0; i < Enemy_hitboxes.length;i++) 
 			{

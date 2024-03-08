@@ -14,6 +14,19 @@ public class Hurtbox extends Rect {
 		y = r.y;
 	}
 
+	public void Basic_attack(Sprite player) 
+		{
+		if (player.direction == 1) {
+			x = player.x+130;
+		    y = player.y+110; 
+		}
+		if (player.direction == 0) 
+		{	
+		x = player.x + 55; 
+		y = player.y+110 ;
+		}	
+	
+	}
 
 	
 }
