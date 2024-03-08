@@ -16,11 +16,12 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	boolean Test_Tool = false;
 	boolean Game_Over = false;
 	boolean is_crouching = false;
-	String [] pose = {"RunLeft", "RunRight", "IdleLeft", "IdleRight", "CrouchLeft","CrouchRight", "CrouchWalkLeft" ,"CrouchWalkRight"}; // title of each animation.
+	String [] pose = {"RunLeft", "RunRight", "IdleLeft", "IdleRight", "CrouchLeft","CrouchRight", 
+			          "CrouchWalkLeft" ,"CrouchWalkRight", "AttackLeft","AttackRight"}; // title of each animation.
 	
 
-	int [] count = {10, 10, 10, 10, 3, 3, 8, 8}; // number of frames in the animations above.
-	int [] duration = {5, 5, 10, 10, 5, 5, 10, 10}; // higher the duration, slower the animation.
+	int [] count = {10, 10, 10, 10, 3, 3, 8, 8, 4, 4}; // number of frames in the animations above.
+	int [] duration = {5, 5, 10, 10, 5, 5, 10, 10, 7, 7}; // higher the duration, slower the animation.
 	
 	Sprite player = new Sprite("player", pose, 600, 450, count, duration);
 	
@@ -66,6 +67,8 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			
 			player.moving = false;
 			player.crouching = false;
+			player.attacking = false;
+			
 			player_hitbox.track_Player(player);
 			player_hitbox.crouch(is_crouching);
 			
@@ -76,12 +79,12 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 				if(LT_Pressed) 
 				{
 					
-				player.moveLT(4);
+				player.moveLT(2);
 			
 				}
 				if(RT_Pressed) 
 				{
-				player.moveRT(4);
+				player.moveRT(2);
 				
 				}
 				
@@ -112,25 +115,15 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			
 			
 
-			if(LT_Pressed) 
-			{
-			player.moveLT(5);
-			player_hitbox.moveLT(5);
-			}
-			if(RT_Pressed) 
-			{
-			player.moveRT(5);
-			player_hitbox.moveRT(5);
-			}
-			
-			
 			if(Attack_Pressed == true) {
+				
+				player.attack();
 
 				if (player.direction == 1)
 					Player_hurtboxes = new Hurtbox (player.x+130, player.y +105,50,20);
-				}
-				if (player.direction == 0) {
-				Player_hurtboxes = new Hurtbox (player.x + 55, player.y + 105,50,20);
+
+				if (player.direction == 0) 
+					Player_hurtboxes = new Hurtbox (player.x + 55, player.y + 105,50,20);
 			}
 			if(Attack_Pressed == false) Player_hurtboxes = new Hurtbox (1000,1000,20,20);
 			
