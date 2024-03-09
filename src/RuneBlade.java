@@ -29,13 +29,20 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	String [] player_pose = {"LTrun", "RTrun", "LTidle", "RTidle", "LTcrouch","RTcrouch", 
 			          "LTcrouchwalk" ,"RTcrouchwalk", "LTattack","RTattack"}; // title of each animation.
 	
+	
+	
+	
 	Hitbox player_hitbox = new Hitbox(705,530, 44,80,4);
 	Hurtbox Player_hurtboxes = new Hurtbox (1000,1000,50,20);
 	Sprite player = new Sprite("player", player_pose, 600, 450, count, duration);
 	
 	//AI
-	AI_control blueSlime = new AI_control(600, 560, 40, 50);
-	AI_control blueSlime_scared = new AI_control(600, 560, 40, 50);
+	String [] blueSlime_pose = {"LTmove", "RTmove"};
+	int [] blueSlime_count = {4, 4};
+	int [] blueSlime_duration = {7, 7};
+	
+	AI_control blueSlime = new AI_control("blueSlime", blueSlime_pose,600, 560, 40, 50, blueSlime_count, blueSlime_duration);
+	AI_control blueSlime_scared = new AI_control("blueSlime", blueSlime_pose,600, 560, 40, 50, blueSlime_count, blueSlime_duration);
 	
 	//TileMap map = new TileMap();
 
