@@ -26,7 +26,8 @@ public class Sprite extends Rect {
 		
 	} 
 	
-	
+
+
 	public void draw(Graphics pen) {
 		
 		if (crouching) {

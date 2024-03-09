@@ -6,8 +6,12 @@ import java.awt.event.*;
 public class RuneBlade extends Applet implements Runnable, KeyListener, MouseListener, MouseMotionListener{
 	
 	
+	Image background = Toolkit.getDefaultToolkit().getImage("Castle.png");
+	
+	
 	Image offScreenImg;
 	Graphics offScreenPen;
+	
 	
 	boolean LT_Pressed = false;
 	boolean RT_Pressed = false;
@@ -16,22 +20,25 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	boolean Test_Tool = false;
 	boolean Game_Over = false;
 	boolean is_crouching = false;
+	
+	
+	//PLAYER
+	int [] count = {10, 10, 10, 10, 3, 3, 8, 8, 4, 4}; // number of frames in the animations above.
+	int [] duration = {5, 5, 10, 10, 5, 5, 10, 10, 7, 7}; // higher the duration, slower the animation.
+	
 	String [] player_pose = {"LTrun", "RTrun", "LTidle", "RTidle", "LTcrouch","RTcrouch", 
 			          "LTcrouchwalk" ,"RTcrouchwalk", "LTattack","RTattack"}; // title of each animation.
 	
-	TileMap map = new TileMap();
-	
-	int [] count = {10, 10, 10, 10, 3, 3, 8, 8, 4, 4}; // number of frames in the animations above.
-	int [] duration = {5, 5, 10, 10, 5, 5, 10, 10, 7, 7}; // higher the duration, slower the animation.
-
-	
-	Sprite player = new Sprite("player", player_pose, 600, 450, count, duration);
-	
 	Hitbox player_hitbox = new Hitbox(705,530, 44,80,4);
 	Hurtbox Player_hurtboxes = new Hurtbox (1000,1000,50,20);
+	Sprite player = new Sprite("player", player_pose, 600, 450, count, duration);
 	
-	AI_control enemy = new AI_control(100, 560, 40, 50);
-	AI_control enemy_scared = new AI_control(600, 560, 40, 50);
+	//AI
+	AI_control blueSlime = new AI_control(600, 560, 40, 50);
+	AI_control blueSlime_scared = new AI_control(600, 560, 40, 50);
+	
+	//TileMap map = new TileMap();
+
 
 	Hurtbox[] Enemy_hurtboxes =
 	{ 
@@ -106,14 +113,14 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			
 
 
-			enemy.chase(player_hitbox, 3);
-			if(Enemy_hitboxes[0].is_alive()) Enemy_hitboxes[0].track(enemy);
-			enemy_scared.evade(player_hitbox, 2);
-			Enemy_hurtboxes[1].track(enemy_scared);
+			blueSlime.chase(player_hitbox, 3);
+			if(Enemy_hitboxes[0].is_alive()) Enemy_hitboxes[0].track(blueSlime);
+			blueSlime_scared.evade(player_hitbox, 2);
+			Enemy_hurtboxes[1].track(blueSlime_scared);
 
 			
 			
-			if(enemy_scared.x < 0 || enemy_scared.x > 1000) enemy_scared.x = 500;
+			if(blueSlime_scared.x < 0 || blueSlime_scared.x > 1400) blueSlime_scared.x = 800;
 			
 			
 			if(Attack_Pressed == true) {
@@ -161,13 +168,14 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	public void paint(Graphics pen) {
 		//pen.drawImage(animation.nextImage(), 100, 100, 240, 160, null);
 		
-		map.draw(pen);
+		//map.draw(pen);
+		 pen.drawImage(background, 0, 0, 1500, 800, null);
 		
 		if (Game_Over == false) {
 		player.draw(pen);
 		if(Enemy_hitboxes[0].is_alive())
-		enemy.draw(pen);
-		enemy_scared.draw(pen);
+		blueSlime.draw(pen);
+		blueSlime_scared.draw(pen);
 		Hp.draw(pen);
 		}
 		

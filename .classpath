@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="images/blueSlime/Idle"/>
+	<classpathentry kind="src" path="images/blueSlime/Move"/>
 	<classpathentry kind="src" path="images/player_knight/Turn"/>
 	<classpathentry kind="src" path="images/player_knight/Attack"/>
 	<classpathentry kind="src" path="images/player_knight/Run"/>
