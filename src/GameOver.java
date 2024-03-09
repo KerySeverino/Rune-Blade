@@ -4,7 +4,7 @@ public class GameOver {
 	
 	//NOTE: Need to implement ability to click on the buttons
 
-	Image image = Toolkit.getDefaultToolkit().getImage("GameOver/game_over_PNG29.png");
+	Image image = Toolkit.getDefaultToolkit().getImage("game_over.png");
 	
 	public void draw(Graphics g) 
 	{

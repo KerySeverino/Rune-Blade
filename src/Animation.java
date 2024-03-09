@@ -18,8 +18,8 @@ public class Animation {
 		image = new Image[count];
 		
 		for (int i = 0; i < count; i ++) {
-			image[i] = Toolkit.getDefaultToolkit().getImage(name + "00" + i + ".png");
-			
+			image[i] = Toolkit.getDefaultToolkit().getImage(name + "_" + i + ".png");
+			//System.out.println("name" + "_" + i + ".png");
 		}
 		
 		

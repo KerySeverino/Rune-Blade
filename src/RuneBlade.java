@@ -16,16 +16,16 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	boolean Test_Tool = false;
 	boolean Game_Over = false;
 	boolean is_crouching = false;
-	String [] pose = {"RunLeft", "RunRight", "IdleLeft", "IdleRight", "CrouchLeft","CrouchRight", 
-			          "CrouchWalkLeft" ,"CrouchWalkRight", "AttackLeft","AttackRight"}; // title of each animation.
+	String [] player_pose = {"LTrun", "RTrun", "LTidle", "RTidle", "LTcrouch","RTcrouch", 
+			          "LTcrouchwalk" ,"RTcrouchwalk", "LTattack","RTattack"}; // title of each animation.
 	
 	TileMap map = new TileMap();
 	
-	int [] count = {10, 10, 10, 10, 3, 3, 8, 8}; // number of frames in the animations above.
-	int [] duration = {5, 5, 10, 10, 5, 5, 10, 10}; // higher the duration, slower the animation.
+	int [] count = {10, 10, 10, 10, 3, 3, 8, 8, 4, 4}; // number of frames in the animations above.
+	int [] duration = {5, 5, 10, 10, 5, 5, 10, 10, 7, 7}; // higher the duration, slower the animation.
 
 	
-	Sprite player = new Sprite("player", pose, 600, 450, count, duration);
+	Sprite player = new Sprite("player", player_pose, 600, 450, count, duration);
 	
 	Hitbox player_hitbox = new Hitbox(705,530, 44,80,4);
 	Hurtbox Player_hurtboxes = new Hurtbox (1000,1000,50,20);

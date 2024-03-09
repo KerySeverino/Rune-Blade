@@ -19,7 +19,7 @@ public class Health_UI {
 		health   = 0;
 		this.hitbox   = hitbox;
 		this.hurtbox  = hurtboxes;
-			 image    = Toolkit.getDefaultToolkit().getImage("Health/Health_" + health + ".png");
+			 image    = Toolkit.getDefaultToolkit().getImage("Health_" + health + ".png");
 		this.duration = duration;
 		
 		// keeps track of the duration
@@ -51,7 +51,7 @@ public class Health_UI {
 			
 			 	if (health<4) 
 			 	{
-				 image = Toolkit.getDefaultToolkit().getImage("Health/Health_" + health + ".png");
+				 image = Toolkit.getDefaultToolkit().getImage("Health_" + health + ".png");
 			 	}
 		}
 		

@@ -18,8 +18,10 @@ public class Sprite extends Rect {
 		
 		
 		for (int i = 0; i < animations.length; i++) {
-			animations[i] = new Animation(pose[i] + "/" + name + pose[i], count[i], duration[i]);
-			System.out.println(pose[i] + "/" + name + pose[i]);
+			animations[i] = new Animation(name + "_" + pose[i], count[i], duration[i]);
+			
+			// Testing/Debugging: Checks the poses that are being loaded
+			//System.out.println(name + "_" + pose[i] + "_" + i + ".png");
 		}
 		
 	} 
