@@ -7,6 +7,7 @@ public class AI_control extends Rect{
 	
 	int direction = 1; // 0 = left, 1 = right
 
+	//Loads the animations
 	public AI_control(String name, String [] pose, int x, int y, int w, int h, int [] count, int [] duration) {
 		super(x, y, w, h);
 		
@@ -14,21 +15,34 @@ public class AI_control extends Rect{
 		
 		for (int i = 0; i < animations.length; i++) {
 			animations[i] = new Animation(name + "_" + pose[i], count[i], duration[i]);
-			
 		}
 
 	}
 	
-	public void draw(Graphics pen) {
+	// Draws the AI actions based on player
+	public void draw(Graphics pen, Rect r) {
 		
-		if (direction == 0) {
-			pen.drawImage(animations[0].nextImage(), x, y, w, h, null);
-		}else {
+		if(direction == 0 && overlaps(r)){
+			//LTattack
+			pen.drawImage(animations[3].nextImage(), x, y, w, h, null);
+		}else if(direction == 1 && overlaps(r)) {
+			//RTattack
+			pen.drawImage(animations[4].nextImage(), x, y, w, h, null);
+		} else if (direction == 0 && !overlaps(r)) {
+			//LTmove
 			pen.drawImage(animations[1].nextImage(), x, y, w, h, null);
+		}else if ((direction == 1 && !overlaps(r))){
+			//RTmove
+			pen.drawImage(animations[2].nextImage(), x, y, w, h, null);
+		}else {
+			//Idle
+			pen.drawImage(animations[0].nextImage(), x, y, w, h, null);
 		}
 		
 	}
 	
+	
+	// Chases the player
 	public void chase(Rect r, int dx)
 	{
 		moving = true;
@@ -46,6 +60,7 @@ public class AI_control extends Rect{
 		if(isBelow(r))    moveUP(dx); 
 	}
 	
+	// Runs away from the player
 	public void evade(Rect r, int dx)
 	{
 		moving = true;
@@ -63,6 +78,7 @@ public class AI_control extends Rect{
 		if(isBelow(r))    moveDN(dx); 
 	}
 	
+	// Checks which direction is the player
 	public boolean isLeftOf(Rect r)
 	{
 		return x + w < r.x;
@@ -82,5 +98,15 @@ public class AI_control extends Rect{
 	{
 		return r.y + r.h < y;
 	}
+	
+	// Checks player hitbox overlap
+	public boolean overlaps(Rect r)
+	{
+		return (x + w >= r.x      ) &&				
+			   (x     <= r.x + r.w) &&
+			   (y + h >= r.y      ) &&			   
+			   (y     <= r.y + r.h);
+	}
+	
 	
 }

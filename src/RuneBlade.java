@@ -33,29 +33,29 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	
 	
 	Hitbox player_hitbox = new Hitbox(705,530, 44,80,4);
-	Hurtbox Player_hurtboxes = new Hurtbox (1000,1000,50,20);
+	Hurtbox player_hurtboxes = new Hurtbox (1000,1000,50,20);
 	Sprite player = new Sprite("player", player_pose, 600, 450, count, duration);
 	
 	//AI
-	String [] blueSlime_pose = {"LTmove", "RTmove"};
-	int [] blueSlime_count = {4, 4};
-	int [] blueSlime_duration = {7, 7};
+	String [] blueSlime_pose = {"idle", "LTmove", "RTmove", "LTattack", "RTattack"};
+	int [] blueSlime_count = {4, 4, 4, 4, 4};
+	int [] blueSlime_duration = {7, 7, 7, 7, 7};
 	
-	AI_control blueSlime = new AI_control("blueSlime", blueSlime_pose,600, 560, 40, 50, blueSlime_count, blueSlime_duration);
-	AI_control blueSlime_scared = new AI_control("blueSlime", blueSlime_pose,600, 560, 40, 50, blueSlime_count, blueSlime_duration);
+	AI_control blueSlime = new AI_control("blueSlime", blueSlime_pose,600, 560, 50, 50, blueSlime_count, blueSlime_duration);
+	AI_control blueSlime_scared = new AI_control("blueSlime", blueSlime_pose,600, 560, 50, 50, blueSlime_count, blueSlime_duration);
 	
 	//TileMap map = new TileMap();
 
 
 	Hurtbox[] Enemy_hurtboxes =
 	{ 
-		new Hurtbox(0,500,40,50),
-		new Hurtbox(800,500,40,50)
+		new Hurtbox(0,500,50,50),
+		new Hurtbox(800,500,50,50)
 	};
 	Hitbox[] Enemy_hitboxes = 
 	{
-			new Hitbox(0,500,40,50,1),
-			new Hitbox(800,500,40,50,1)		
+			new Hitbox(0,500,50,50,1),
+			new Hitbox(800,500,50,50,1)		
 			
 	};
 	GameOver deathScreen = new GameOver();	
@@ -117,8 +117,6 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 				player_hitbox.moveRT(4);
 				}
 			}
-			
-
 
 			blueSlime.chase(player_hitbox, 3);
 			if(Enemy_hitboxes[0].is_alive()) Enemy_hitboxes[0].track(blueSlime);
@@ -134,16 +132,16 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 				
 				player.attack();
 
-				Player_hurtboxes.Basic_attack(player);
+				player_hurtboxes.Basic_attack(player);
 			}
 
 			
-			if(Attack_Pressed == false) Player_hurtboxes = new Hurtbox (1000,1000,50,20);
+			if(Attack_Pressed == false) player_hurtboxes = new Hurtbox (1000,1000,50,20);
 
 			
 			for(int i =0; i < Enemy_hitboxes.length;i++) 
 			{
-			if(Enemy_hitboxes[i].overlaps(Player_hurtboxes))
+			if(Enemy_hitboxes[i].overlaps(player_hurtboxes))
 			{
 				Enemy_hitboxes[i].Hit();
 			}
@@ -181,8 +179,8 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		if (Game_Over == false) {
 		player.draw(pen);
 		if(Enemy_hitboxes[0].is_alive())
-		blueSlime.draw(pen);
-		blueSlime_scared.draw(pen);
+		blueSlime.draw(pen, player_hitbox); // Draws blueSlime and checks player hitbox overlap
+		blueSlime_scared.draw(pen, player_hitbox); // Draws blueSlime and checks player hitbox overlap
 		Hp.draw(pen);
 		}
 		
@@ -196,7 +194,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		for(int i =0;i<Enemy_hitboxes.length;i++) Enemy_hitboxes[i].draw(pen);
 		
 		pen.setColor(Color.orange);
-		Player_hurtboxes.draw(pen);
+		player_hurtboxes.draw(pen);
 		
 		pen.setColor(Color.green);
 		player_hitbox.draw(pen);
