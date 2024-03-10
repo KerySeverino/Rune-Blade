@@ -15,6 +15,7 @@ public class AI_control extends Rect{
 		
 		for (int i = 0; i < animations.length; i++) {
 			animations[i] = new Animation(name + "_" + pose[i], count[i], duration[i]);
+			System.out.println(name + "_" + pose[i] );		
 		}
 
 	}
@@ -34,10 +35,12 @@ public class AI_control extends Rect{
 		}else if ((direction == 1 && !overlaps(r))){
 			//RTmove
 			pen.drawImage(animations[2].nextImage(), x, y, w, h, null);
-		}else {
-			//Idle
-			pen.drawImage(animations[0].nextImage(), x, y, w, h, null);
 		}
+		
+//		else {
+//			//Idle
+//			pen.drawImage(animations[0].nextImage(), x, y, w, h, null);
+//		}
 		
 	}
 	

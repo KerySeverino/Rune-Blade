@@ -12,8 +12,9 @@ public class Sprite extends Rect {
 	
 	public Sprite(String name, String [] pose, int x, int y, int [] count, int [] duration) {
 		
+		//Male Knight Size
 		super(x, y, 240, 160);
-		
+				
 		animations  = new Animation[pose.length];
 		
 		

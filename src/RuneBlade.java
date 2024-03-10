@@ -30,8 +30,6 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			          "LTcrouchwalk" ,"RTcrouchwalk", "LTattack","RTattack"}; // title of each animation.
 	
 	
-	
-	
 	Hitbox player_hitbox = new Hitbox(705,530, 44,80,4);
 	Hurtbox player_hurtboxes = new Hurtbox (1000,1000,50,20);
 	Sprite player = new Sprite("player", player_pose, 600, 450, count, duration);
@@ -41,8 +39,14 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	int [] blueSlime_count = {4, 4, 4, 4, 4};
 	int [] blueSlime_duration = {7, 7, 7, 7, 7};
 	
+	String [] flyingEye_pose = {"Null", "LTmove", "RTmove", "LTattack", "RTattack", "LThurt", "RTHurt", "LTdeath", "RTdeath"};
+	int [] flyingEye_count = {0, 8, 8, 8, 8, 4, 4, 4, 4};
+	int [] flyingEye_duration = {0, 10, 10, 10, 10, 7, 7, 7 , 7};
+	
 	AI_control blueSlime = new AI_control("blueSlime", blueSlime_pose,600, 560, 50, 50, blueSlime_count, blueSlime_duration);
 	AI_control blueSlime_scared = new AI_control("blueSlime", blueSlime_pose,600, 560, 50, 50, blueSlime_count, blueSlime_duration);
+	
+	AI_control flyingEye = new AI_control("flyingEye", flyingEye_pose, 600, 450, 256,256, flyingEye_count, flyingEye_duration);
 	
 	//TileMap map = new TileMap();
 
@@ -50,13 +54,12 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	Hurtbox[] Enemy_hurtboxes =
 	{ 
 		new Hurtbox(0,500,50,50),
-		new Hurtbox(800,500,50,50)
+		new Hurtbox(800,500,50,50),
 	};
 	Hitbox[] Enemy_hitboxes = 
 	{
 			new Hitbox(0,500,50,50,1),
-			new Hitbox(800,500,50,50,1)		
-			
+			new Hitbox(800,500,50,50,1),
 	};
 	GameOver deathScreen = new GameOver();	
 	
@@ -94,9 +97,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 				is_crouching = true;
 				if(LT_Pressed) 
 				{
-					
 				player.moveLT(2);
-			
 				}
 				if(RT_Pressed) 
 				{
@@ -107,7 +108,6 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			}else {
 				if(LT_Pressed) 
 				{
-					
 				player.moveLT(4);
 				player_hitbox.moveLT(4);
 				}
@@ -119,11 +119,11 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			}
 
 			blueSlime.chase(player_hitbox, 3);
+			flyingEye.chase(player_hitbox, 3);
 			if(Enemy_hitboxes[0].is_alive()) Enemy_hitboxes[0].track(blueSlime);
 			blueSlime_scared.evade(player_hitbox, 2);
 			Enemy_hurtboxes[1].track(blueSlime_scared);
 
-			
 			
 			if(blueSlime_scared.x < 0 || blueSlime_scared.x > 1400) blueSlime_scared.x = 800;
 			
@@ -180,7 +180,8 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		player.draw(pen);
 		if(Enemy_hitboxes[0].is_alive())
 		blueSlime.draw(pen, player_hitbox); // Draws blueSlime and checks player hitbox overlap
-		blueSlime_scared.draw(pen, player_hitbox); // Draws blueSlime and checks player hitbox overlap
+		blueSlime_scared.draw(pen, player_hitbox); 
+		flyingEye.draw(pen, player_hitbox); // Draws flyingEye and checks player hitbox overlap
 		Hp.draw(pen);
 		}
 		
