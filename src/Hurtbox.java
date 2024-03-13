@@ -14,18 +14,41 @@ public class Hurtbox extends Rect {
 		y = r.y;
 	}
 
-	public void Basic_attack(Sprite player) 
+	public void enemy_attack(AI_control enemy,Hitbox player) 
+	{
+		
+		if (enemy.overlaps(player)) 
 		{
-		if (player.direction == 1) {
-			x = player.x+130;
-		    y = player.y+110; 
+				x = enemy.x;
+			    y = enemy.y;
+			    h = enemy.h;
+			    w = enemy.w;
+		}
+			
+		else
+		{
+			x = 1000; 
+			y = 1000;
+		}
+
+
+	}
+	public void Basic_attack(Sprite player) 
+	{
+		if (player.direction == 1) 
+		{
+			x = player.x+155;
+		    y = player.y+80;
+			
 		}
 		if (player.direction == 0) 
 		{	
-		x = player.x + 55; 
-		y = player.y+110 ;
+		x = player.x + 5; 
+		y = player.y + 80 ;
 		}	
-	
+		w=80;
+		h=75;
+
 	}
 
 	

@@ -21,7 +21,6 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	boolean Game_Over = false;
 	boolean is_crouching = false;
 	
-	
 	//PLAYER
 	int [] count = {10, 10, 10, 10, 3, 3, 8, 8, 4, 4}; // number of frames in the animations above.
 	int [] duration = {5, 5, 10, 10, 5, 5, 10, 10, 7, 7}; // higher the duration, slower the animation.
@@ -30,7 +29,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			          "LTcrouchwalk" ,"RTcrouchwalk", "LTattack","RTattack"}; // title of each animation.
 	
 	
-	Hitbox player_hitbox = new Hitbox(705,530, 44,80,4);
+	Hitbox player_hitbox = new Hitbox(705,530, 44,85,4);
 	Hurtbox player_hurtboxes = new Hurtbox (1000,1000,50,20);
 	Sprite player = new Sprite("player", player_pose, 600, 450, count, duration);
 	
@@ -88,7 +87,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			player.crouching = false;
 			player.attacking = false;
 			
-			player_hitbox.track_Player(player);
+			player_hitbox.track_Player(player,Attack_Pressed);
 			player_hitbox.crouch(is_crouching);
 			
 			if(DN_Pressed == false) is_crouching = false;

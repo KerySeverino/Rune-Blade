@@ -8,12 +8,20 @@ public class Hitbox extends Hurtbox {
 		 this.health = health;
 		// TODO Auto-generated constructor stub
 	}
-public void track_Player(Rect r) 
+public void track_Player(Sprite r, boolean attack) 
 	
 	{
-		if(direction == 0) x = r.x+85;
-		else x =r.x+110;
-		                   y = r.y+95;
+		if(r.direction == 0 && attack ) x = r.x + 85;
+		
+		if(r.direction == 0 && !attack ) x = r.x + 110;
+		
+
+		if(r.direction == 1 && attack) x = r.x + 110;
+		if(r.direction == 1 && !attack) x = r.x + 85;
+		
+		
+		y = r.y+95;
+		 
 	}
 
 public void crouch (boolean crouching)
