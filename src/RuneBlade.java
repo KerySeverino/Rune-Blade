@@ -36,7 +36,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	//AI
 	String [] blueSlime_pose = {"idle", "LTmove", "RTmove", "LTattack", "RTattack"};
 	int [] blueSlime_count = {4, 4, 4, 4, 4};
-	int [] blueSlime_duration = {7, 7, 7, 7, 7};
+	int [] blueSlime_duration = {15, 7, 7, 7, 7};
 	
 	String [] flyingEye_pose = {"Null", "LTmove", "RTmove", "LTattack", "RTattack", "LThurt", "RTHurt", "LTdeath", "RTdeath"};
 	int [] flyingEye_count = {0, 8, 8, 8, 8, 4, 4, 4, 4};
@@ -45,7 +45,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	AI_control blueSlime = new AI_control("blueSlime", blueSlime_pose,600, 560, 50, 50, blueSlime_count, blueSlime_duration);
 	AI_control blueSlime_scared = new AI_control("blueSlime", blueSlime_pose,600, 560, 50, 50, blueSlime_count, blueSlime_duration);
 	
-	AI_control flyingEye = new AI_control("flyingEye", flyingEye_pose, 600, 450, 256,256, flyingEye_count, flyingEye_duration);
+	//AI_control flyingEye = new AI_control("flyingEye", flyingEye_pose, 600, 450, 256,256, flyingEye_count, flyingEye_duration);
 	
 	//TileMap map = new TileMap();
 
@@ -117,10 +117,15 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 				}
 			}
 
-			blueSlime.chase(player_hitbox, 3);
-			flyingEye.chase(player_hitbox, 3);
+			blueSlime.chase(player_hitbox, Enemy_hitboxes[0], 2);
+			
+			//flyingEye.chase(player_hitbox, 3);
+			
+			
 			if(Enemy_hitboxes[0].is_alive()) Enemy_hitboxes[0].track(blueSlime);
-			blueSlime_scared.evade(player_hitbox, 2);
+			
+			blueSlime_scared.evade(player_hitbox, Enemy_hitboxes[1], 2);
+			
 			Enemy_hurtboxes[1].track(blueSlime_scared);
 
 			
@@ -180,7 +185,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		if(Enemy_hitboxes[0].is_alive())
 		blueSlime.draw(pen, player_hitbox); // Draws blueSlime and checks player hitbox overlap
 		blueSlime_scared.draw(pen, player_hitbox); 
-		flyingEye.draw(pen, player_hitbox); // Draws flyingEye and checks player hitbox overlap
+		//flyingEye.draw(pen, player_hitbox); // Draws flyingEye and checks player hitbox overlap
 		Hp.draw(pen);
 		}
 		

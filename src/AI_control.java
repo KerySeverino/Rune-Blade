@@ -1,4 +1,5 @@
 import java.awt.Graphics;
+import java.util.Random;
 
 public class AI_control extends Rect{
 	
@@ -6,6 +7,8 @@ public class AI_control extends Rect{
 	boolean moving = false;
 	
 	int direction = 1; // 0 = left, 1 = right
+	int distanceFromPlayer;
+	Random rand = new Random();
 
 	//Loads the animations
 	public AI_control(String name, String [] pose, int x, int y, int w, int h, int [] count, int [] duration) {
@@ -37,48 +40,56 @@ public class AI_control extends Rect{
 			pen.drawImage(animations[2].nextImage(), x, y, w, h, null);
 		}
 		
-//		else {
-//			//Idle
-//			pen.drawImage(animations[0].nextImage(), x, y, w, h, null);
-//		}
-		
 	}
 	
 	
 	// Chases the player
-	public void chase(Rect r, int dx)
+	public void chase(Rect player, Rect ai, int dx)
 	{
 		moving = true;
+		distanceFromPlayer = Math.abs(player.x - ai.x);
 		
-		if(isLeftOf(r)) {  
-			direction = 1;
-			moveRT(dx); 
-		}
-		if(isRightOf(r)) { 
-			direction = 0;
-			moveLT(dx);
-		}
+		// Chases the player if player is within range
+		if(distanceFromPlayer <= 350) 
+		{
+			if(isLeftOf(player)) {  
+				direction = 1;
+				moveRT(dx); 
+			}
+			if(isRightOf(player)) { 
+				direction = 0;
+				moveLT(dx);
+			}
+			
+		} //else {
+			// Idle behavior
+			//System.out.println("Idle");
+		//}
 		
-		if(isAbove(r))    moveDN(dx); 
-		if(isBelow(r))    moveUP(dx); 
+//		if(isAbove(player))    moveDN(dx); 
+//		if(isBelow(player))    moveUP(dx); 
 	}
-	
+
 	// Runs away from the player
-	public void evade(Rect r, int dx)
+	public void evade(Rect player, Rect ai, int dx)
 	{
 		moving = true;
+		distanceFromPlayer = Math.abs(player.x - ai.x);
 		
-		if(isLeftOf(r)) {
-			direction = 0;
-			moveLT(dx); 
+		if(isLeftOf(player)) {
+				direction = 0;
+				moveLT(dx); 
 		}
-		if(isRightOf(r)) {   
-			direction = 1;
-			moveRT(dx);
-		}
+		if(isRightOf(player)) {   
+				direction = 1;
+				moveRT(dx);
+		} //else {
+			// Idle behavior
+			//System.out.println("Idle");
+		//}
 		
-		if(isAbove(r))    moveUP(dx); 
-		if(isBelow(r))    moveDN(dx); 
+//		if(isAbove(r))    moveUP(dx); 
+//		if(isBelow(r))    moveDN(dx); 
 	}
 	
 	// Checks which direction is the player
