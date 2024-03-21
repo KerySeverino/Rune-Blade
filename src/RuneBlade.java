@@ -6,7 +6,7 @@ import java.awt.event.*;
 public class RuneBlade extends Applet implements Runnable, KeyListener, MouseListener, MouseMotionListener{
 	
 	
-	ImageLayer background = new ImageLayer("Castle.png", 0, 0 , 2);
+	ImageLayer background = new ImageLayer("Castle.png", 0, 0 , 1);
 	
 	Image offScreenImg;
 	Graphics offScreenPen;
@@ -107,31 +107,33 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			}else {
 				if(LT_Pressed) 
 				{
-				player.moveLT(8);
-				player_hitbox.moveLT(8);
-				Camera.moveLT(8);
+				player.moveLT(4);
+				player_hitbox.moveLT(4);
+				Camera.moveLT(4);
 				}
 				if(RT_Pressed) 
 				{
-				player.moveRT(8);
-				player_hitbox.moveRT(8);
-				Camera.moveRT(8);
+				player.moveRT(4);
+				player_hitbox.moveRT(4);
+				Camera.moveRT(4);
 				}
 			}
+			
+			// AI CHASE
 
-		//blueSlime.chase(player_hitbox, Enemy_hitboxes[0], 2);
+			blueSlime.chase(player_hitbox, Enemy_hitboxes[0], 2);
 			
 			//flyingEye.chase(player_hitbox, 3);
 			
 			
 			if(Enemy_hitboxes[0].is_alive()) Enemy_hitboxes[0].track(blueSlime);
 			
-			blueSlime_scared.evade(player_hitbox, Enemy_hitboxes[1], 2);
+			blueSlime_scared.evade(player_hitbox, Enemy_hitboxes[1], 3);
 			
 			Enemy_hurtboxes[1].track(blueSlime_scared);
 
 			
-			if(blueSlime_scared.x < 0 || blueSlime_scared.x > 1400) blueSlime_scared.x = 800;
+			if(blueSlime_scared.x < 0 || blueSlime_scared.x > 5000) blueSlime_scared.x = 800;
 			
 			
 			if(Attack_Pressed == true) {
@@ -158,7 +160,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			
 			
 			
-			// this is constantly checking if damge is taken just needs to be written once
+			// this is constantly checking if damage is taken just needs to be written once
 			if(Hp.damage_taken() == true)  player_hitbox.Hit();
 			
 			if(player_hitbox.is_alive() == false) {

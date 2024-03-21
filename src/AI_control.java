@@ -28,16 +28,16 @@ public class AI_control extends Rect{
 		
 		if(direction == 0 && overlaps(r)){
 			//LTattack
-			pen.drawImage(animations[3].nextImage(), x, y, w, h, null);
+			pen.drawImage(animations[3].nextImage(), x - Camera.x, y - Camera.y, w, h, null);
 		}else if(direction == 1 && overlaps(r)) {
 			//RTattack
-			pen.drawImage(animations[4].nextImage(), x, y, w, h, null);
+			pen.drawImage(animations[4].nextImage(), x - Camera.x, y - Camera.y, w, h, null);
 		} else if (direction == 0 && !overlaps(r)) {
 			//LTmove
-			pen.drawImage(animations[1].nextImage(), x, y, w, h, null);
+			pen.drawImage(animations[1].nextImage(), x - Camera.x, y - Camera.y, w, h, null);
 		}else if ((direction == 1 && !overlaps(r))){
 			//RTmove
-			pen.drawImage(animations[2].nextImage(), x, y, w, h, null);
+			pen.drawImage(animations[2].nextImage(), x - Camera.x, y - Camera.y, w, h, null);
 		}
 		
 	}
