@@ -6,8 +6,7 @@ import java.awt.event.*;
 public class RuneBlade extends Applet implements Runnable, KeyListener, MouseListener, MouseMotionListener{
 	
 	
-	Image background = Toolkit.getDefaultToolkit().getImage("Castle.png");
-	
+	ImageLayer background = new ImageLayer("Castle.png", 0, 0 , 2);
 	
 	Image offScreenImg;
 	Graphics offScreenPen;
@@ -87,7 +86,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 			player.crouching = false;
 			player.attacking = false;
 			
-			player_hitbox.track_Player(player,Attack_Pressed);
+			player_hitbox.track_Player(player, Attack_Pressed);
 			player_hitbox.crouch(is_crouching);
 			
 			if(DN_Pressed == false) is_crouching = false;
@@ -97,27 +96,30 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 				if(LT_Pressed) 
 				{
 				player.moveLT(2);
+				Camera.moveLT(2);
 				}
 				if(RT_Pressed) 
 				{
 				player.moveRT(2);
-				
+				Camera.moveRT(2);
 				}
 				
 			}else {
 				if(LT_Pressed) 
 				{
-				player.moveLT(4);
-				player_hitbox.moveLT(4);
+				player.moveLT(8);
+				player_hitbox.moveLT(8);
+				Camera.moveLT(8);
 				}
 				if(RT_Pressed) 
 				{
-				player.moveRT(4);
-				player_hitbox.moveRT(4);
+				player.moveRT(8);
+				player_hitbox.moveRT(8);
+				Camera.moveRT(8);
 				}
 			}
 
-			blueSlime.chase(player_hitbox, Enemy_hitboxes[0], 2);
+		//blueSlime.chase(player_hitbox, Enemy_hitboxes[0], 2);
 			
 			//flyingEye.chase(player_hitbox, 3);
 			
@@ -178,7 +180,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		//pen.drawImage(animation.nextImage(), 100, 100, 240, 160, null);
 		
 		//map.draw(pen);
-		 pen.drawImage(background, 0, 0, 1500, 800, null);
+		 background.draw(pen);
 		
 		if (Game_Over == false) {
 		player.draw(pen);

@@ -10,8 +10,8 @@ public class Hurtbox extends Rect {
 	public void track(Rect r) 
 	
 	{
-		x = r.x;
-		y = r.y;
+		x = r.x - Camera.x;
+		y = r.y - Camera.y;
 	}
 
 	public void enemy_attack(AI_control enemy,Hitbox player) 
@@ -37,14 +37,14 @@ public class Hurtbox extends Rect {
 	{
 		if (player.direction == 1) 
 		{
-			x = player.x+155;
-		    y = player.y+80;
+			x = player.x+155 - Camera.x;
+		    y = player.y+80 - Camera.y;
 			
 		}
 		if (player.direction == 0) 
 		{	
-		x = player.x + 5; 
-		y = player.y + 80 ;
+		x = player.x + 5 - Camera.x; 
+		y = player.y + 80 - Camera.y;
 		}	
 		w=80;
 		h=75;

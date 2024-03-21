@@ -35,23 +35,23 @@ public class Sprite extends Rect {
 			
 			if (moving) {
 				
-				if (direction == 0) pen.drawImage(animations[6].nextImage(), x, y, w, h, null);
-				if (direction == 1) pen.drawImage(animations[7].nextImage(), x, y, w, h, null);
+				if (direction == 0) pen.drawImage(animations[6].nextImage(), x - Camera.x, y - Camera.y, w, h, null);
+				if (direction == 1) pen.drawImage(animations[7].nextImage(), x - Camera.x, y - Camera.y, w, h, null);
 				
 				
 			}else {
 				if (direction == 0) {
-					pen.drawImage(animations[4].crouch(), x, y, w, h, null);
+					pen.drawImage(animations[4].crouch(), x - Camera.x, y - Camera.y, w, h, null);
 				}else {
-					pen.drawImage(animations[5].crouch(), x, y, w, h, null);
+					pen.drawImage(animations[5].crouch(), x - Camera.x, y - Camera.y, w, h, null);
 				}
 			}
 			
 		}else if (attacking) {
 			if (direction == 0) {
-				pen.drawImage(animations[8].nextImage(), x, y, w, h, null);
+				pen.drawImage(animations[8].nextImage(), x - Camera.x, y - Camera.y, w, h, null);
 			}else {
-				pen.drawImage(animations[9].nextImage(), x, y, w, h, null);
+				pen.drawImage(animations[9].nextImage(), x - Camera.x, y - Camera.y, w, h, null);
 			}
 			
 			
@@ -59,15 +59,15 @@ public class Sprite extends Rect {
 		}else if (!moving) {
 			
 			if (direction == 0) {
-				pen.drawImage(animations[2].nextImage(), x, y, w, h, null);
+				pen.drawImage(animations[2].nextImage(), x - Camera.x, y - Camera.y, w, h, null);
 			}else {
-				pen.drawImage(animations[3].nextImage(), x, y, w, h, null);
+				pen.drawImage(animations[3].nextImage(), x - Camera.x, y - Camera.y, w, h, null);
 			}
 			
 			
 
 		}else if (moving){
-			pen.drawImage(animations[action].nextImage(), x, y, w, h, null);
+			pen.drawImage(animations[action].nextImage(), x - Camera.x, y - Camera.y, w, h, null);
 		}
 		
 		

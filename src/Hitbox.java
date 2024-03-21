@@ -11,17 +11,15 @@ public class Hitbox extends Hurtbox {
 public void track_Player(Sprite r, boolean attack) 
 	
 	{
-		if(r.direction == 0 && attack ) x = r.x + 85;
-		
-		if(r.direction == 0 && !attack ) x = r.x + 110;
+		if(r.direction == 0 && attack ) x = r.x + 85 - Camera.x;
+		if(r.direction == 0 && !attack ) x = r.x + 110 - Camera.x;
 		
 
-		if(r.direction == 1 && attack) x = r.x + 110;
-		if(r.direction == 1 && !attack) x = r.x + 85;
+		if(r.direction == 1 && attack) x = r.x + 110 - Camera.x;
+		if(r.direction == 1 && !attack) x = r.x + 85 - Camera.x;
 		
 		
-		y = r.y+95;
-		 
+		y = r.y+95 - Camera.y;
 	}
 
 public void crouch (boolean crouching)
