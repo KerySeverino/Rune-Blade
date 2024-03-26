@@ -11,7 +11,7 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	Image offScreenImg;
 	Graphics offScreenPen;
 	
-	
+	boolean ENTER_Pressed = false;
 	boolean LT_Pressed = false;
 	boolean RT_Pressed = false;
 	boolean DN_Pressed = false;
@@ -19,6 +19,9 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	boolean Test_Tool = false;
 	boolean Game_Over = false;
 	boolean is_crouching = false;
+	boolean gameStarted = false;
+
+	TitleScreen startGame = new TitleScreen();
 	
 	//PLAYER
 	int [] count = {10, 10, 10, 10, 3, 3, 8, 8, 4, 4}; // number of frames in the animations above.
@@ -81,7 +84,13 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	public void run() {
 		
 		while(true) { 
-			
+
+			//Title Screen
+			if(ENTER_Pressed) {
+				gameStarted = true;
+			}
+
+			//Player Movement
 			player.moving = false;
 			player.crouching = false;
 			player.attacking = false;
@@ -209,6 +218,11 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 		player_hitbox.draw(pen);
 		pen.setColor(Color.black);
 		}
+
+		//Draw TitleScreen
+		if(!gameStarted) {
+			startGame.draw(pen);
+		}
 	}
 	
 	public void update(Graphics pen) {
@@ -266,6 +280,8 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	public void keyPressed(KeyEvent e) {
 		
 		int code = e.getKeyCode();
+
+		if(code == e.VK_ENTER) ENTER_Pressed = true;
 		
 		if (code == e.VK_A )   LT_Pressed = true;  
 		if (code == e.VK_D)    RT_Pressed = true; 
@@ -286,6 +302,8 @@ public class RuneBlade extends Applet implements Runnable, KeyListener, MouseLis
 	@Override
 	public void keyReleased(KeyEvent e) {
 		int code = e.getKeyCode();
+
+		if(code == e.VK_ENTER) ENTER_Pressed = false;
 		
 		if (code == e.VK_A )   LT_Pressed = false;  
 		if (code == e.VK_D)   RT_Pressed = false; 
